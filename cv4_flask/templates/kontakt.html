@@ -1,0 +1,19 @@
+{% extends "sablona.html" %}
+
+{% block nazevstranky %} kontakt|PB Website {% endblock %}
+
+{% block hlavniobsah %}
+<form action="/kontakt" method="post">
+    <fieldset>
+        <label for="jmeno">Jmeno:</label>
+        <input type="text" name="jmeno" placeholder="Zadej jmeno" required>
+        <label for="dotaz">Dotaz:</label>
+        <input type="text" name="dotaz" placeholder="Zadej dotaz" required>
+    </fieldset>
+    <input type="submit" value="Odesli dotaz">
+</form>
+{% if odpoved %}
+<p style="color: green"> {{ odpoved }}</p>
+{% endif %}
+
+{% endblock %}

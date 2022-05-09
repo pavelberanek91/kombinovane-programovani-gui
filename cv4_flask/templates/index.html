@@ -1,0 +1,35 @@
+{% extends "sablona.html" %}
+
+{% block nazevstranky %}
+Vitejte|PBWebsite
+{% endblock %}
+
+{% block hlavniobsah %}
+<article id="zivotopis">
+    <header>
+        <h2>Zivotopis</h2>
+    </header>
+    <section class="obsah">
+        <p>Pracoval jsem na ujepu. Nic vic neumim.</p>
+    </section>
+    <footer>
+        <p>Datum posledni zmeny: ted</p>
+    </footer>
+</article>
+<section id="dotazy">
+    <table>
+        <thead>
+            <tr>
+                <th>Jmeno</th>
+                <th>Dotaz</th>
+            </tr>
+            </thead>
+            {% for jmeno, dotaz in databaze.items() %}
+                <tr>
+                    <td> {{ jmeno }}</td>
+                    <td>{{ dotaz }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </section>
+{% endblock %}

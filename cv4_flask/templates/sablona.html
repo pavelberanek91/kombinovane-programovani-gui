@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block nazevstranky %} {% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <header>
+            <h1>PB Website</h1>
+        </header>
+        <nav>
+            <ul>
+                <li> <a href="/">Domu</a> </li>
+                <li> <a href="/kontakt">Kontakt</a> </li>
+                <li> <a href="/informace">Informace</a> </li>
+            </ul>
+        </nav>
+        <main>
+            {% block hlavniobsah %} {% endblock %}
+        </main>
+        <footer>
+            Copyright Beranek Pavel
+        </footer>
+    </body>
+</html>
